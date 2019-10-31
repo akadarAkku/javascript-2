@@ -3,42 +3,88 @@ const object = {
   NaNyStrings: [],
   isNumberyString: function (param) {
     // write me!
+      if ((typeof param === 'string') && (isNaN(param) === false)) {
+        return true;
+      //if it is string and if it doesn't cast NaN (this is string but legal number like '6')
+      }
+      else {
+        return false;
+      }
   },
   addString: function (param) {
-    if (null) return false; // write this early return condition
+    if (typeof param !== "string") return false;
+    else  {
+      if (isNaN(param)){
+         this.NaNyStrings.push(param);
+        }else {
+            this.numberyStrings.push(param);
+    }
+    return true;
+    }
 
-    // write me! (using this.isNumberyString)
   },
   allStrings: function () {
-    // write me!
+    if (this.NaNyStrings.length === 0) return this.numberyStrings;
+    else if (this.numberyStrings.length === 0) return this.NaNyStrings;
+    else return this.numberyStrings.concat(this.NaNyStrings);
   },
   evenStrings: function () {
-    // write me!
+   if (this.numberyStrings.length === 0 && this.NaNyStrings.length !== 0) {
+    return this.numberyStrings;
+   }else if (this.numberyStrings.length !== 0 && this.NaNyStrings.length === 0){
+     return this.numberyStrings.filter(akku =>akku % 2 ===0  );
+   }else if (this.numberyStrings.length !== 0 && this.NaNyStrings !== 0){
+     return this.numberyStrings.filter(akku =>akku % 2 ===0  );
+   }
   },
   oddStrings: function () {
-    // write me!
+    if (this.numberyStrings.length === 0 && this.NaNyStrings.length !== 0) {
+      return this.numberyStrings;
+     }else if (this.numberyStrings.length !== 0 && this.NaNyStrings.length === 0){
+       return this.numberyStrings.filter(akku =>akku % 2 !==0  );
+     }else if (this.numberyStrings.length !== 0 && this.NaNyStrings !== 0){
+       return this.numberyStrings.filter(akku =>akku % 2 !==0  );
+     }
   },
   negativeStrings: function () {
-    // write me!
+    if (this.numberyStrings.length === 0 && this.NaNyStrings.length !== 0) {
+      return this.numberyStrings;
+    }else if (this.numberyStrings.length !== 0 && this.NaNyStrings.length === 0){
+      return this.numberyStrings.filter(akku =>akku < 0  );
+    }else if (this.numberyStrings.length !== 0 && this.NaNyStrings !== 0){
+      return this.numberyStrings.filter(akku =>akku < 0  );
+    }
   },
   positiveStrings: function () {
-    // write me!
+    if (this.numberyStrings.length === 0 && this.NaNyStrings.length !== 0) {
+      return this.numberyStrings;
+    }else if (this.numberyStrings.length !== 0 && this.NaNyStrings.length === 0){
+      return this.numberyStrings.filter(akku =>akku > 0  );
+    }else if (this.numberyStrings.length !== 0 && this.NaNyStrings !== 0){
+      return this.numberyStrings.filter(akku =>akku > 0 || akku === ""  );
+    }
   },
   zeroStrings: function () {
-    // write me!
+    if (this.numberyStrings.length === 0 && this.NaNyStrings.length !== 0) {
+      return this.numberyStrings;
+    }else if (this.numberyStrings.length !== 0 && this.NaNyStrings.length === 0){
+      return this.numberyStrings.filter(akku =>akku == 0.0 || akku === ""  );
+    }else if (this.numberyStrings.length !== 0 && this.NaNyStrings !== 0){
+      return this.numberyStrings.filter(akku =>akku == 0.0 || akku === ""  );
+    }
   },
   numberyAsNumbers: function () {
-    // write me!
+    return this.numberyStrings.map(akku => Number(akku));
   },
   NaNyAsNumbers: function () {
-    // write me!
+    return this.NaNyStrings.map(akku => Number(akku));
   },
   sumOfNumbery: function () {
-    // write me!
+      const reducer = (accumulator, currentValue) => Number(accumulator) + Number(currentValue);
+      return this.numberyStrings.reduce(reducer,0);
+    
   },
   sumOfNaNy: function () {
-    // write me!
+    return NaN;
   },
 };
-
-

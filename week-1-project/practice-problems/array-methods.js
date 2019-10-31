@@ -43,6 +43,7 @@ try {
   function isNaNyString(arg) {
     // write me!
     // can you write this in one line? (isNaN will be helpful)
+    
   }
   isNaNyString.quizzing = true;
   isNaNyString.display = true;

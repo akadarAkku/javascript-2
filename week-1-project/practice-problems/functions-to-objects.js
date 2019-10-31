@@ -54,7 +54,7 @@ try {
       sum: function (a, b) {
         this.result = a + b
       }
-    }
+    }  
 
     // methods can "return" values to their objects
     obj.sum(3, 4);

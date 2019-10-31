@@ -24,4 +24,5 @@ function callMethodsHandler() {
 
 }
 // connect this to it's button with an event listener!        <----------
-
+const callitbutton = document.getElementById('call-it-button');
+call-itbutton.addEventListener('click', scrambleHandler);
