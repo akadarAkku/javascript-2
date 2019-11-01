@@ -65,12 +65,15 @@ const object = {
     }
   },
   zeroStrings: function () {
-    if (this.numberyStrings.length === 0 && this.NaNyStrings.length !== 0) {
-      return this.numberyStrings;
-    }else if (this.numberyStrings.length !== 0 && this.NaNyStrings.length === 0){
-      return this.numberyStrings.filter(akku =>akku == 0.0 || akku === ""  );
-    }else if (this.numberyStrings.length !== 0 && this.NaNyStrings !== 0){
-      return this.numberyStrings.filter(akku =>akku == 0.0 || akku === ""  );
+    // write me!
+    if (this.NaNyStrings.length !== 0 && this.numberyStrings.length === 0)
+    return this.numberyStrings;
+    else if (this.NaNyStrings.length === 0 && this.numberyStrings.length !== 0){
+      function checkZero(num) {return (num == 0)}
+      return this.numberyStrings.filter(checkZero);
+    }else if (this.NaNyStrings.length !== 0 && this.numberyStrings.length !== 0){
+        function checkZero(num) {return (num == 0)}
+        return this.numberyStrings.filter(checkZero);
     }
   },
   numberyAsNumbers: function () {

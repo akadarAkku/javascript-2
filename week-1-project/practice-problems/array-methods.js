@@ -21,7 +21,7 @@ try {
   ];
   function concatArrays(arr1, arr2) {
     // write me!
-  }
+    
   concatArrays.display = true;
   evaluate(concatArrays, concatArraysTests);
 
