@@ -21,7 +21,7 @@ try {
   ];
   function concatArrays(arr1, arr2) {
     // write me!
-    
+  }
   concatArrays.display = true;
   evaluate(concatArrays, concatArraysTests);
 
@@ -43,7 +43,6 @@ try {
   function isNaNyString(arg) {
     // write me!
     // can you write this in one line? (isNaN will be helpful)
-    
   }
   isNaNyString.quizzing = true;
   isNaNyString.display = true;
