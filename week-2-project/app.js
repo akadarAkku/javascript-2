@@ -15,15 +15,21 @@ const object = {
   entries: {},
   isPrimitive: function (value) {
     // write me!
+   if (this.isPrimitive );
+    return true;
   },
   hasKey: function (obj, key) {
     // write me!
+   if(this.hasKey);
+    return true;
+    
+
   },
   hasValue: function (obj, value) {
     // write me!
   },
   addEntry: function (key, value) {
-    if (null) { // write me!
+    if (key ) { // write me!
       return new TypeError('addEntry: key should be a string');
     }
     if (null) { // write me! (using this.isPrimitive)

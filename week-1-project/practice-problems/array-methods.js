@@ -21,6 +21,8 @@ try {
   ];
   function concatArrays(arr1, arr2) {
     // write me!
+    //return (...arr1, ...arr2);
+    return arr1.concat(arr2);
   }
   concatArrays.display = true;
   evaluate(concatArrays, concatArraysTests);
@@ -35,14 +37,15 @@ try {
     { name: 'seventh', args: ['Infinity'], expected: false },
     { name: 'eighth', args: ['infinity'], expected: true },
     { name: 'ninth', args: ['NaN'], expected: true },
-    { name: 'tenth', args: [NaN], expected: null },
-    { name: 'eleventh', args: [true], expected: null },
-    { name: 'twelfth', args: [undefined], expected: null },
-    { name: 'thirteenth', args: [null], expected: null },
+    { name: 'tenth', args: [NaN], expected: true },
+    { name: 'eleventh', args: [true], expected: false },
+    { name: 'twelfth', args: [undefined], expected: true },
+    { name: 'thirteenth', args: [null], expected: false },
   ];
   function isNaNyString(arg) {
     // write me!
     // can you write this in one line? (isNaN will be helpful)
+    return isNaN(arg);
   }
   isNaNyString.quizzing = true;
   isNaNyString.display = true;
@@ -61,8 +64,8 @@ try {
     { name: 'first', args: [thingsToNumber1], expected: [1, 2] },
     { name: 'second', args: [thingsToNumber2], expected: [1, 10] },
     { name: 'third', args: [thingsToNumber3], expected: [2, 0] },
-    { name: 'fourth', args: [thingsToNumber4], expected: null },
-    { name: 'fifth', args: [[1, 2, 3]], expected: null },
+    { name: 'fourth', args: [thingsToNumber4], expected: [1, 2] },
+    { name: 'fifth', args: [[1, 2, 3]], expected: [1, 2, 3] },
     { name: 'sixth', args: [oddsToNumber], expected: [1, 3, 5] },
     { name: 'seventh', args: [evensToNumber], expected: [2, 4, 6] },
   ];
@@ -70,7 +73,10 @@ try {
     // write me!
     // early return condition: array contains no numbery strings
     //   consider using a variation of your solution to isNaNyString (and .every)
-  };
+    let nonNaNyString = arr.filter(item => !(isNaNyString(item)));
+    let numberArray = nonNaNyString.map(item => Number(item));
+    return numberArray
+  }
   returnAsNumbers.display = true;
   evaluate(returnAsNumbers, returnAsNumbersTests);
 
@@ -92,6 +98,10 @@ try {
     // write me!
     // no early return, all the test cases are numbers!
     // this solution will be very helpful for the next exercise
+    function sumItems (acc, item) {
+      return acc + item;
+    };
+    return arr.reduce (sumItems);
   };
   sumAll.display = true;
   evaluate(sumAll, sumAllTests);
@@ -109,8 +119,8 @@ try {
     { name: 'first', args: [sumNumberys1], expected: 3 },
     { name: 'second', args: [sumNumberys2], expected: 11 },
     { name: 'third', args: [sumNumberys3], expected: 2 },
-    { name: 'fourth', args: [sumNumberys4], expected: null },
-    { name: 'fifth', args: [[1, 2, 3]], expected: null },
+    { name: 'fourth', args: [sumNumberys4], expected: 3 },
+    { name: 'fifth', args: [[1, 2, 3]], expected: 6 },
     { name: 'sixth', args: [['1', '2', '3']], expected: 6 },
     { name: 'seventh', args: [oddsToSum], expected: 9 },
     { name: 'eighth', args: [evensToSum], expected: 12 },
@@ -118,6 +128,9 @@ try {
   function sumAllNumberys(arr) {
     // write me!
     // early return condition: array contains no numbery strings
+    let nonNaNyString = arr.filter(item => !(isNaNyString(item)));
+    let numberArray = nonNaNyString.map(item => Number(item));
+    return sumAll(numberArray);
   };
   sumAllNumberys.display = true;
   evaluate(sumAllNumberys, sumAllNumberysTests);
@@ -137,14 +150,21 @@ try {
     { name: 'first', args: [findEvensArray1], expected: ['2'] },
     { name: 'second', args: [findEvensArray2], expected: ['10'] },
     { name: 'third', args: [findEvensArray3], expected: ['2', ''] },
-    { name: 'fourth', args: [findEvensArray4], expected: null },
-    { name: 'fifth', args: [[1, 2, 3]], expected: null },
+    { name: 'fourth', args: [findEvensArray4], expected: [2] },
+    { name: 'fifth', args: [[1, 2, 3]], expected: [2] },
     { name: 'sixth', args: [oddsToNotFind], expected: [] },
     { name: 'seventh', args: [evensToFind], expected: ['2', '4', '6'] },
   ];
   function findAllEvens(arr) {
     // write me!
     // early return condition: array contains no numbery strings
+    
+    //instead of early return I used filter to eliminate no numbery strings.
+    let nonNaNyString = arr.filter(item => !(isNaNyString(item)));
+        
+    //Then check if they are even numbers
+    return nonNaNyString.filter(item => Number(item)%2 === 0);
+
   };
   findAllEvens.display = true;
   evaluate(findAllEvens, findAllEvensTests);
@@ -171,6 +191,12 @@ try {
   function findAllOdds(arr) {
     // write me!
     // early return condition: array contains no numbery strings
+     //instead of early return I used filter to eliminate no numbery strings.
+     let nonNaNyString = arr.filter(item => !(isNaNyString(item)) && typeof item === 'string');
+     if (nonNaNyString === null || nonNaNyString.length < 1) return null;
+     
+     return nonNaNyString.filter(item => Number(item)%2 === 1);
+        
   };
   findAllOdds.display = true;
   evaluate(findAllOdds, findAllOddsTests);

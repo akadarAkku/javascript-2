@@ -153,6 +153,8 @@ try {
   ];
   function mergeObjects(obj1, obj2) {
     // write me!
+    const objCopy = Object.assign({}, obj2);
+    return Object.assign(objCopy, obj1);
   }
   mergeObjects.display = true;
   evaluate(mergeObjects, mergeObjsTests);
@@ -170,7 +172,10 @@ try {
   ];
   function replaceItem(arr, index, newItem) {
     // write me!
-  }
+    const arrCopy = [...arr];
+    arrCopy[index] = newItem;
+    return arrCopy;
+    }
   replaceItem.display = true;
   evaluate(replaceItem, replaceItemTests);
 
@@ -189,6 +194,9 @@ try {
   ];
   function combineArrays(arr1, arr2) {
     // write me!
+    let newArray = [...arr1];
+    newArray.push(...arr2);
+    return newArray;
   }
   combineArrays.display = true;
   evaluate(combineArrays, combineArraysTests);
@@ -207,6 +215,16 @@ try {
   ];
   function repeatItems(items, numRepeats) {
     // write me!
+    let repeatedArray = items.map(repeatFunction)
+
+    function repeatFunction(e) {
+      let tmpArr = [];
+      for (let i = 0; i < numRepeats; i ++){
+        tmpArr.push(e);
+      }
+      return tmpArr;
+    }
+    return repeatedArray;
   }
   repeatItems.display = true;
   evaluate(repeatItems, repeatItemsTests);
@@ -226,6 +244,8 @@ try {
   ];
   function concatArrays(arr1, arr2) {
     // write me!
+    let newArray = [...arr2, ...arr1];
+    return newArray;
   }
   concatArrays.display = true;
   evaluate(concatArrays, concatArraysTests);
@@ -244,8 +264,24 @@ try {
     { name: 'fifth', args: [arrayToMerge2, arrayToMerge1], expected: [2, 3, 4, 1] },
   ];
   function mergeArrays(arr1, arr2) {
+    let filtered = [...arr2];
+    for (i = 0; i < filtered.length; i++) {
+      if (arr1.indexOf(filtered[i]) >= 0){
+        filtered.splice(i,1);
+        i--;
+      }
+    }
+  
     // write me!
     // consider filtering one of the arrs with .indexOf in the others
+    /*function deDuplicate(value){
+      if (arr1.indexOf(value) < 0) return value;
+    }
+    let filtered = arr2.filter(deDuplicate); */
+    /*let filtered = arr2.filter(function(item) {
+      if (arr1.indexOf(item) < 0) return item;
+    });*/
+    return [...arr1, ...filtered];
   }
   mergeArrays.display = true;
   evaluate(mergeArrays, mergeArraysTests);
