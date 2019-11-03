@@ -65,7 +65,7 @@ const object = {
     }
   },
   zeroStrings: function () {
-    // write me!
+    // write m
     if (this.NaNyStrings.length !== 0 && this.numberyStrings.length === 0)
     return this.numberyStrings;
     else if (this.NaNyStrings.length === 0 && this.numberyStrings.length !== 0){
