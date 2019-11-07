@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <title>week 2 project UI</title>
   <meta name="description" content="week 2 project UI">
+  <link rel="stylesheet" href="style.css">
+  <header id="header">
+    <h1>JS 2- week 2 project Akader Ibrahim</h1>
+  </header>
 
   <script src="../app.js"></script>
 
@@ -18,13 +22,13 @@
 
   <section id='inputs' style='display: flex; flex-direction: row;'>
     <div>
-      <text>key</text><br>
-      <input id='key' placeholder="enter key" />
+      <text id="key-headline">key</text><br>
+      <input id="key" placeholder="enter key" />
     </div>
     <div style='display: flex; flex-direction: column;'>
       <text>value</text><br>
-      <textarea id='value-value' placeholder="enter value"></textarea>
-      <select id='value-type'>
+      <textarea id="value-value" placeholder="enter value"></textarea>
+      <select id="value-type">
         <option value="string">string</option>
         <option value="number">number</option>
         <option value="boolean">boolean</option>
@@ -34,7 +38,7 @@
     </div>
   </section>
   <br>
-  <section id='method-select'>
+  <section id="method-select">
     <fieldset>
       <legend>Which method do you want to call?</legend>
       <label>object.</label>
@@ -46,7 +50,7 @@
         <option value="findByKey">findByKey(key)</option>
         <option value="findByValue">findByValue(value)</option>
       </select>
-      <button id='call-it'>call it!</button>
+      <button id="call-it">call it!</button>
     </fieldset>
   </section>
   <br>
