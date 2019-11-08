@@ -22,6 +22,8 @@ try {
   ];
   function isPrimitive(thing) {
     // write me!
+    isPrimitive.thing = true;
+    !isPrimitive.thing == false;
   }
   isPrimitive.display = true;
   evaluate(isPrimitive, isPrimitiveTests);

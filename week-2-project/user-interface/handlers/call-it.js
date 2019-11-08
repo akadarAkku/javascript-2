@@ -58,5 +58,5 @@ function callItHandler() {
 }
 const callItButton = document.getElementById('call-it');
 callItButton.addEventListener('click', callItHandler);
-// connect this to it's button with an event listener!        <----------
+// connect this to it's button with an event listener!   <----------
 

@@ -1,0 +1,45 @@
+/* body{
+    background: lightslategray;
+    width: 100%;
+}
+
+#header{
+    background: lightskyblue;
+    padding: 0%;
+    text-align: center;
+}
+
+#method-select{
+ margin: auto;
+ padding: 10%;
+ text-align: center;
+}
+
+#method-name{
+ margin: center;
+ padding: 1%;
+ border: 4px solid lightseagreen;
+ float: center;
+ align-items: flex-end;
+}
+
+#call-it{
+ margin: auto;
+ padding: 1%;
+ text-align: center;
+ border: 4px solid lightseagreen;
+ 
+}
+
+.inputs{
+    margin: center;
+    padding: 1%;
+    border: 4px solid lightseagreen;
+    float: center;
+    align-items: flex-end;
+ 
+    
+}
+
+
+ */

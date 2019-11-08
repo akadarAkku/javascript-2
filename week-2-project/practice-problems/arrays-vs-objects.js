@@ -18,6 +18,7 @@ try {
 
     // swap the values stored in each structure
 
+
     console.assert(obj.prop === "object", "obj.prop should be 'object");
     console.assert(arr[0] === "array", "arr[0] should be 'array");
   }
@@ -31,7 +32,6 @@ try {
     // swap the values stored in each structure using brackets and these variables
     const objKey = 'prop';
     const arrIndex = 0;
-    
 
 
     // asserts
