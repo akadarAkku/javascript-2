@@ -22,8 +22,7 @@ try {
   ];
   function isPrimitive(thing) {
     // write me!
-    isPrimitive.thing = true;
-    !isPrimitive.thing == false;
+  
   }
   isPrimitive.display = true;
   evaluate(isPrimitive, isPrimitiveTests);
@@ -40,6 +39,7 @@ try {
   ];
   function hasKey(obj, key) {
     // write me!
+    return obj != null && hasOwnProperty.call(obj, key);
   }
   hasKey.display = true;
   evaluate(hasKey, hasKeyTests);
@@ -57,6 +57,7 @@ try {
   function hasValue(obj, value) {
     // write me!
     // consider using Object.keys, .filter and obj.hasOwnProperty
+    
   }
   hasValue.display = true;
   evaluate(hasValue, hasValueTests);
@@ -75,6 +76,7 @@ try {
   function modifyToObjectWithBrackets(obj, key, value) {
     // write me!
     // (remember to avoid side effects)
+    
   }
   modifyToObjectWithBrackets.display = true;
   evaluate(modifyToObjectWithBrackets, modifyToObjectWithBracketsTests)
@@ -90,6 +92,7 @@ try {
   function deleteFromObject(obj, key) {
     // write me!
     // (remember to avoid side effects)
+     
   }
   deleteFromObject.display = true;
   evaluate(deleteFromObject, deleteFromObjectTests)
