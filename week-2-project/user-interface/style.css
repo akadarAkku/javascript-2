@@ -1,6 +1,11 @@
-/* body{
-    background: lightslategray;
-    width: 100%;
+body{
+ background: lightslategray;
+ width: 96%;   
+  padding: 1em 2%;   
+  float: left;   
+  clear: both;   
+  font-size: 14px;   
+  font-size: .875rem;  
 }
 
 #header{
@@ -15,31 +20,101 @@
  text-align: center;
 }
 
-#method-name{
- margin: center;
- padding: 1%;
- border: 4px solid lightseagreen;
- float: center;
- align-items: flex-end;
-}
-
-#call-it{
- margin: auto;
- padding: 1%;
- text-align: center;
- border: 4px solid lightseagreen;
- 
-}
-
 .inputs{
     margin: center;
-    padding: 1%;
-    border: 4px solid lightseagreen;
-    float: center;
-    align-items: flex-end;
- 
+    padding: 3%;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
     
 }
 
+#key{
+    margin: auto;
+    padding: 2%;
+    text-align: center;
+    width: 20%;
+    border: 2px solid lightseagreen;
+    position: absolute;
+    left: 180px;
+    top: 230px;
+     font-size: 30px;
+}
 
- */
+#method-name{
+    margin: center;
+    padding: 2%;
+    border: 2px solid lightseagreen;
+    float: center;
+    align-items: flex-end;
+    
+   }
+   
+   #call-it{
+    margin: auto;
+    padding: 1%;
+    text-align: center;
+    border: 2px solid lightseagreen;
+    
+   }
+
+   #entries-display{
+    margin: auto;
+    padding: 1%;
+    text-align: center;
+   }
+
+#key-headline{
+    margin: auto;
+    padding: 2%;
+    text-align: center;
+    width: 20%;
+    position: absolute;
+    left: 150px;
+    top: 170px;
+     font-size: 30px;
+}
+#value-text{
+ margin: 10px 10px auto;
+ padding: 1%;
+ text-align: center;
+ font-size: 28px;
+ position: absolute;
+ left: 590px;
+ top: 170px;
+ font-size: 30px;
+}
+#value-type{
+ margin: 10px 10px auto;
+ padding: 1%;
+ text-align: center;
+ font-size: 28px;
+ position: absolute;
+ left: 780px;
+ top: 230px;
+ font-size: 30px;
+ border: 2px solid lightseagreen;
+}
+
+#value-value{
+ margin: 10px 10px auto;
+ padding: 1%;
+ text-align: center;
+ font-size: 25px;
+ position: absolute;
+ left: 450px;
+ top: 220px;
+ border: 2px solid lightseagreen;
+}
+
+#entries-display{
+ font-size: 25px;
+ position: absolute;
+ left: 550px;
+ top: 400px;
+}
+
+#display-zone{
+    color: black;
+    font-size: 18px;
+}

@@ -20,11 +20,13 @@
 
 <body>
 
-  <section id='inputs' style='display: flex; flex-direction: row;'>
+  <section>
     <div class="inputs">
-      <text id="key-headline">key</text><br>
-      <input id="key" placeholder="enter key" />
-      <text>value</text><br>
+    <div>
+    <text id="key-headline">key</text><br>
+    <input id="key" placeholder="enter key" />
+      </div>
+      <text id="value-text">value</text><br>
       <textarea id="value-value" placeholder="enter value"></textarea>
       <select id="value-type">
         <option value="string">string</option>
@@ -38,8 +40,9 @@
   <br>
   <section id="method-select">
     <fieldset>
-      <legend>Which method do you want to call?</legend>
-      <label>object.</label>
+      <legend style="font-size: 25px;">Which method do you want to call?</legend></style>
+      <label style="font-size: 25px;">object.</label> </style>
+      
       <select id="method-name">
         <option value="addEntry">addEntry(key, value)</option>
         <option value="removeEntry">removeEntry(key)</option>
