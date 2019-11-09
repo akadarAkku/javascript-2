@@ -17,6 +17,12 @@ try {
     let _ = null;
 
     // swap the values stored in each structure
+    _ = arr [0];
+    arr[0] = obj.prop;
+    obj.prop = _;
+    console.assert(obj.prop === "object", "obj.prop should be 'object");
+    console.assert(arr[0] === "array", "arr[0] should be 'array");
+
 
 
     console.assert(obj.prop === "object", "obj.prop should be 'object");

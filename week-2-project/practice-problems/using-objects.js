@@ -12,8 +12,8 @@ try {
 
     const obj = {
       a: 0,
-      getA: function () { },
-      sumAB: function (b) { },
+      getA: function () { return this.a;},
+      sumAB: function (b) { return this.a + b; },
     };
 
     console.assert(obj.getA() === 0, '1: obj.getA() should return 0');
@@ -36,8 +36,10 @@ try {
 
     const obj = {
       word: '',
-      getWord: function () { },
-      concat: function (secondHalf) { },
+      getWord: function () {return 'the word is ' + this.word; },
+      concat: function (secondHalf) { 
+        return this.word.concat(secondHalf) ;
+      },
     };
 
     console.assert(obj.getWord() === 'the word is ', `1: obj.getWord() should return 'the word is '`);
@@ -59,8 +61,11 @@ try {
 
     const obj = {
       array: ['hi!'],
-      getArray: function () { },
-      getCopy: function () { },
+      getArray: function () {return this.array;},
+      getCopy: function () {
+        const copyArr = [...this.array];
+        return copyArr;
+      },
     };
 
     const gottenArray1 = obj.getArray();
@@ -94,8 +99,8 @@ try {
 
     const obj = {
       string: '',
-      setString: function (str) { },
-      remixString: function (mixer) { }
+      setString: function (str) { this.string = str},
+      remixString: function (mixer) { this.string = this.string.split('').join(mixer) }
     }
 
     obj.setString('hoy');
@@ -129,8 +134,11 @@ try {
       number: 5,
       mod: 0,
       equals: 0,
-      setNumber: function (num) { },
-      modulo: function (modder) { }
+      setNumber: function (num) { this.number = num; },
+      modulo: function (modder) { 
+        this.mod=modder;
+        this.equals = this.number%this.mod;
+      }
     };
 
     obj.modulo(2);
@@ -162,8 +170,12 @@ try {
 
     const obj = {
       arr: [1, 0],
-      merge: function (toMerge) { },
-      replace: function (newArr) { },
+      merge: function (toMerge) {
+        this.arr = toMerge.concat(this.arr);
+       },
+      replace: function (newArr) { 
+        this.arr = newArr;
+      },
     };
 
     obj.merge([4]);
@@ -196,10 +208,14 @@ try {
 
     const obj = {
       arr: [],
-      merge: function (toMerge) { },
-      replaceAll: function (newEntry) { },
-      getRemixed: function (mixer) { },
-      getCopy: function () { }
+      merge: function (toMerge) { this.arr = toMerge.concat(this.arr);},
+      replaceAll: function (newEntry) { this.arr = this.arr.map(item => newEntry);},
+      getRemixed: function (mixer) { 
+        let remixedArr = [...this.arr];
+        remixedArr = remixedArr.join(mixer);
+        return remixedArr;
+      },
+      getCopy: function () { return [...this.arr] }
     };
 
     obj.merge([1, 2]);
@@ -232,11 +248,26 @@ try {
 
     const obj = {
       entries: {},
-      newEntry: function (key, value) { },
-      readEntry: function (key) { },
-      updateEntry: function (key, newValue) { },
-      deleteEntry: function (key) { },
-      readAll: function () { }
+      newEntry: function (key, value) {
+        this.entries[key] = value;
+        return this.entries[key];
+       },
+      readEntry: function (key) { 
+        return this.entries[key];
+      },
+      updateEntry: function (key, newValue) {
+        this.entries[key] = newValue;
+        return newValue;
+      },
+      deleteEntry: function (key) {
+
+        if (delete this.entries[key]) return true;
+        return undefined;
+      },
+      readAll: function () {
+        const newEntries = {...this.entries};
+        return newEntries;
+       }
     };
 
     console.assert(obj.newEntry('a', 0) === 0, 'assert 1');
