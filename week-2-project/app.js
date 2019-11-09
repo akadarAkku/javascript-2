@@ -90,22 +90,27 @@ const object = {
    
   },
   findByValue: function (value) {
-    if (typeof this !== 'string') { // write me! (using this.isPrimitive)
+    if (!this.isPrimitive(value)) { // write me! (using this.isPrimitive)
       return new TypeError('findByValue: value should be a primitive');
     }
-    if (!this.hasValue(value)==this.entries, value) { // write me! (using this.hasValue)
+    if (!this.hasValue(this.entries, value))  { // write me! (using this.hasValue)
       return new ReferenceError(`findByValue: no entry with value (${typeof value}, ${value})`);
     }
 
     // write me! (this one is a bit trickier)
-    var datas=this.readAll();
-    var find=null;
-    for (const [key_obj, value_obj] of Object.entries(datas)) {
-      if(value==value_obj){
-         find = {'key':key_obj, 'value':value_obj};
+    let newObj = {};
+    if (this.hasValue(this.entries, value)){
+      const keyArray = Object.keys(this.entries);
+      for (let j = 0; j < keyArray.length; j++) {
+        if (this.entries[keyArray[j]] === value) {
+          newObj[keyArray[j]] = value;
+        }
       }
+      return newObj;
+    }else
+    {
+      return newObj;
     }
-    return find;
 
   },
-}
+};

@@ -10,8 +10,11 @@ body{
 
 #header{
     background: lightskyblue;
-    padding: 0%;
+    padding: 1%;
     text-align: center;
+    position: relative;
+    top: 0px;
+    bottom: 0px;
 }
 
 #method-select{
@@ -110,11 +113,12 @@ body{
 #entries-display{
  font-size: 25px;
  position: absolute;
- left: 550px;
- top: 400px;
+ left: 580px;
+ top: 420px;
 }
 
 #display-zone{
     color: black;
     font-size: 18px;
+    background: blanchedalmond;
 }
