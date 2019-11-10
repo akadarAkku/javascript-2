@@ -68,6 +68,7 @@ const object = {
       return Number(acc) + Number(num);
     }
     return this.numberyStrings.reduce(sumNumbery, 0) ;
+    // write me! (using a Array.prototype.reduce())
   },
   sumOfNaNy: function () {
     // write me!

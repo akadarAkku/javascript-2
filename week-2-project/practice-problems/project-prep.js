@@ -139,7 +139,7 @@ try {
   ];
   function findByValue(obj, value) {
     let objNew = {};
-    const obje3 = {...obj};
+    const obje3 = {...obj,};
     let key = Object.keys(obje3).filter(key => obje3[key] === value);
     if(key.length===0){
       return {};

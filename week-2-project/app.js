@@ -8,6 +8,9 @@
   - and users can access & modify that data
 */
 
+
+
+
 const object = {
   entries: {},
   isPrimitive: function (value) {
@@ -38,23 +41,37 @@ const object = {
       return new TypeError('addEntry: value should be a primitive');
     }
 
+    if (null) { // write me! (using this.hasKey)
+      return new Error(`addEntry: key "${key}" already exists`);
+    }
+
+
     if (this.hasKey(this.entries, key)) { // write me! (using this.hasKey)
       return new Error(`addEntry: key "${key}" already exists`);
     } 
 
     else {this.entries[key] = value;
-          return true;}
+          return true;
+        }
     },
   removeEntry: function (key) {
     if (typeof key !== 'string') { // write me!
       return new TypeError('removeEntry: key should be a string');
     }
+
     if (!this.hasKey(this.entries, key)) { // write me! (using this.hasKey)
       return new ReferenceError(`removeEntry: no property "${key}" in this.entries`);
     }
      delete this.entries[key];
      return true;
     
+    if (null) { // write me! (using this.hasKey)
+      return new ReferenceError(`removeEntry: no property "${key}" in this.entries`);
+    }
+
+    delete this.entries[key]
+    return true
+    // write me!
   },
   updateEntry: function (key, value) {
     if (typeof key !== 'string') { // write me!
@@ -63,12 +80,17 @@ const object = {
     if (!this.isPrimitive(value)) { // write me! (using this.isPrimitive)
       return new TypeError('updateEntry: value should be a primitive');
     }
-    if (!this.hasKey(this.entries, key)) { // write me! (using this.hasKey)
+
+ if (!this.hasKey(this.entries, key)) { // write me! (using this.hasKey)
+
+    if (null) { // write me! (using this.hasKey)
+
       return new ReferenceError(`updateEntry: no property "${key}" in this.entries`);
     }
     // write me!
      else {this.entries[key] = value;
      return true;}
+  }
   },
   readAll: function () {
     // write me!
@@ -81,7 +103,11 @@ const object = {
     }
     if (!this.hasKey(this.entries, key)) { // write me! (using this.hasKey)
       console.log('haskey');
+
+    if (null) { // write me! (using this.hasKey)
+     
       return new ReferenceError(`findByKey: no property "${key}" in this.entries`);
+    }
     }
     // write me!
     var newObj = {};
