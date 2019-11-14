@@ -14,9 +14,12 @@ try {
   function swapValues1() {
     const obj = { prop: "array" };
     const arr = ["object"];
-    let _ = null;
+    let a = obj.prop;
+    obj.prop = arr[0];
+    arr[0]= a;
 
     // swap the values stored in each structure
+    
 
 
     console.assert(obj.prop === "object", "obj.prop should be 'object");
@@ -27,16 +30,17 @@ try {
   function swapValues2() {
     const obj = { prop: "array" };
     const arr = ["object"];
-    let _ = null;
 
     // swap the values stored in each structure using brackets and these variables
     const objKey = 'prop';
     const arrIndex = 0;
-
+    let temp = obj[objKey];
+    obj[objKey] = arr[arrIndex];
+    arr[arrIndex]=temp;
 
     // asserts
-    console.assert(obj[obj_key] === "object", "obj assert");
-    console.assert(arr[arr_index] === "array", "arr assert");
+    console.assert(obj[objKey] === "object", "obj assert");
+    console.assert(arr[arrIndex] === "array", "arr assert");
   }
   evaluate(swapValues2);
 

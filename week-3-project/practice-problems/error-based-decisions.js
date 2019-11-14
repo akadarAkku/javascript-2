@@ -35,10 +35,12 @@ try {
   function exercise1(arg) {
     const result = mightReturnAnError(arg);
 
-    if (null) { // write this condition
+    if (result instanceof Error) { // write this condition
       // write me!
+      return false;
     } else {
       // write me!
+      return true;
     }
 
   }
@@ -61,7 +63,11 @@ try {
     const result = mightReturnAnError(arg);
 
     // write me!
-
+    if(result instanceof Error){
+      return result.message;
+    } else{
+      return arg;
+    }
   }
   exercise2.display = true;
   evaluate(exercise2, exercise2Tests);
@@ -83,7 +89,6 @@ try {
     const result = mightReturnAnError(arg);
 
     // write me!
-
   }
   exercise3.display = true;
   evaluate(exercise3, exercise3Tests);

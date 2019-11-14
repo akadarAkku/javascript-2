@@ -3,7 +3,7 @@ function addStringHandler() {
   // read and process user input
 
   /* write some code to read the string input from the user */
-  // const stringToAdd = /* write me! */ null;
+  const stringToAdd = document.getElementById('value-input').value;
   const stringToAdd = document.getElementById('new-string-input').value;
 
   // pass user input through core logic (this works!  no need to change it)
