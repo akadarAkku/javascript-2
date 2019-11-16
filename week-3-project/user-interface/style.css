@@ -1,6 +1,6 @@
 body{
   background:cadetblue;
-  width: 96%;   
+  width: 100%;   
   padding: 1em 2%;   
   float: left;   
   clear: both;   
@@ -30,7 +30,7 @@ body{
     text-align: center;
     width: 40%;
     position: absolute;
-    left: 10px;
+    left: -50px;
     top: 6px;
     font-size: 24px;
     font-family: bold;
@@ -42,7 +42,7 @@ body{
     padding: 2%;
     text-align: center;
     width: 30%;
-    height: 14%;
+    height: 12%;
     position: absolute;
     left: 70px;
     top: 50px;
@@ -55,7 +55,7 @@ body{
     text-align: center;
     width: 40%;
     position: absolute;
-    left: 300px;
+    left: 320px;
     top: 10px;
     font-size: 25px;
     color: firebrick;
@@ -67,7 +67,7 @@ body{
     width: 30%;
     height: 15%;
     position: absolute;
-    left: 280px;
+    left: 304px;
     top: 50px;
     background:wheat;
      
@@ -103,7 +103,7 @@ body{
     padding: 1%;
     width: 15%;
     position: absolute;
-    left: 480px;
+    left: 538px;
     top: 50px;
     overflow: hidden;
     background:wheat;
@@ -131,5 +131,4 @@ body{
     width: 50%;
     border: 2px solid gray;
     height: 10%;
-    
    }

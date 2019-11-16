@@ -14,8 +14,12 @@ const object = {
   
     // write me!
     get currentEntry() {
-  
-
+    let Object = this.findByKey(this.currentKey);
+    if (Object instanceof Error) {
+      return {[this.currentKey]:Object}
+    } else {
+      return Object;
+    }
   },
   likedKeys: [],
   get likedEntries() {
@@ -28,10 +32,10 @@ const object = {
     if (typeof key !== 'string') { // write the early return condition
       return new TypeError('likeEntry: key should be a string');
     }
-    if (!this.hasKey) { // write the early return condition
+    if (!this.entries.hasOwnProperty(key)) { // write the early return condition
       return new ReferenceError(`likeEntry: key "${key}" has been removed`);
     }
-    if (this.hasKey(this.likeEntry, key)) { // write the early return condition
+    if (this.likedKeys.includes(key)) { // write the early return condition
       return new Error(`likeEntry: key "${key}" is already liked`);
     }
     // write me!
@@ -81,16 +85,15 @@ const object = {
   },
   removeEntry: function (key) {
     // write me!
-    if (typeof key !== 'string') {
+    if (typeof key !== 'string') { // write me!
       return new TypeError('removeEntry: key should be a string');
     }
-    if (!this.hasKey(this.entries, key)) { 
+    else if (!this.hasKey(this.entries, key)) { // write me! (using this.hasKey)
       return new ReferenceError(`removeEntry: no property "${key}" in this.entries`);
     }
-     delete this.entries[key];
-     return true;
-
-  },
+    else {delete this.entries[key];
+          return true;}
+    },
 
   updateEntry: function (key, value) {
     // write me!
